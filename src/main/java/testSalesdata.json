@@ -23,12 +23,6 @@
     "instanceCount":"3"
   },
   {
-    "class":"DetailedMessage",
-    "type":"strawberry",
-    "sellingPrice":"2",
-    "instanceCount":"5"
-  },
-  {
     "class":"Message",
     "type":"banana",
     "sellingPrice":"-7"
@@ -64,11 +58,6 @@
   },
   {
     "class":"Message",
-    "type":"mango",
-    "sellingPrice":"7"
-  },
-  {
-    "class":"Message",
     "type":"apple",
     "sellingPrice":"10"
   },
@@ -89,33 +78,13 @@
   },
   {
     "class":"Message",
-    "type":"mango",
-    "sellingPrice":"35"
-  },
-  {
-    "class":"Message",
     "type":"banana",
     "sellingPrice":"7"
-  },
-  {
-    "class":"Message",
-    "type":"strawberry",
-    "sellingPrice":"1"
-  },
-  {
-    "class":"Message",
-    "type":"strawberry",
-    "sellingPrice":"3"
   },
   {
     "class":"Message",
     "type":"apple",
     "sellingPrice":"12"
-  },
-  {
-    "class":"Message",
-    "type":"strawberry",
-    "sellingPrice":"2"
   },
   {
     "class":"AdjustmentMessage",
@@ -137,12 +106,6 @@
   },
   {
     "class":"AdjustmentMessage",
-    "type":"mango",
-    "sellingPrice":"7",
-    "operationType":"SUBTRACT"
-  },
-  {
-    "class":"AdjustmentMessage",
     "type":"apple",
     "sellingPrice":"10",
     "operationType":"SUBTRACT"
@@ -169,12 +132,6 @@
     "type":"apple",
     "sellingPrice":"-12",
     "instanceCount":"3"
-  },
-  {
-    "class":"DetailedMessage",
-    "type":"strawberry",
-    "sellingPrice":"2",
-    "instanceCount":"5"
   },
   {
     "class":"Message",
@@ -212,11 +169,6 @@
   },
   {
     "class":"Message",
-    "type":"mango",
-    "sellingPrice":"7"
-  },
-  {
-    "class":"Message",
     "type":"apple",
     "sellingPrice":"10"
   },
@@ -237,33 +189,13 @@
   },
   {
     "class":"Message",
-    "type":"mango",
-    "sellingPrice":"35"
-  },
-  {
-    "class":"Message",
     "type":"banana",
     "sellingPrice":"7"
-  },
-  {
-    "class":"Message",
-    "type":"strawberry",
-    "sellingPrice":"1"
-  },
-  {
-    "class":"Message",
-    "type":"strawberry",
-    "sellingPrice":"3"
   },
   {
     "class":"Message",
     "type":"apple",
     "sellingPrice":"12"
-  },
-  {
-    "class":"Message",
-    "type":"strawberry",
-    "sellingPrice":"2"
   },
   {
     "class":"AdjustmentMessage",
@@ -306,12 +238,6 @@
     "operationType":"SUBTRACT"
   },
   {
-    "class":"AdjustmentMessage",
-    "type":"strawberry",
-    "sellingPrice":"2",
-    "operationType":"ADD"
-  },
-  {
     "class":"DetailedMessage",
     "type":"apple",
     "sellingPrice":"10",
@@ -331,11 +257,6 @@
   },
   {
     "class":"Message",
-    "type":"mango",
-    "sellingPrice":"7"
-  },
-  {
-    "class":"Message",
     "type":"apple",
     "sellingPrice":"10"
   },
@@ -343,12 +264,6 @@
     "class":"Message",
     "type":"orange",
     "sellingPrice":"7"
-  },
-  {
-    "class":"DetailedMessage",
-    "type":"mango",
-    "sellingPrice":"7",
-    "instanceCount":"6"
   },
   {
     "class":"DetailedMessage",
@@ -379,11 +294,6 @@
     "type":"apple",
     "sellingPrice":"-12",
     "instanceCount":"3"
-  },
-  {
-    "class":"DetailedMessage",
-    "type":"strawberry",
-    "sellingPrice":"2",
-    "instanceCount":"5"
   }
+  
 ]

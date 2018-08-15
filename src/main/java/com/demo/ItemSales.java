@@ -10,7 +10,6 @@ import com.demo.vo.Message;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -21,7 +20,7 @@ public class ItemSales {
 	private static ItemSales itemSales = new ItemSales();
 	private SalesOperation salesOperation;
 
-	private static final long TOTAL_MESSAGE_PASS = 50;
+	private static final long MAX_MESSAGE_ALLOW = 50;
 
 	private ItemSales() {
 		this.salesOperation = new SalesOperation();
@@ -31,21 +30,20 @@ public class ItemSales {
 		return itemSales;
 	}
 
-	public boolean initialize(String stockFile) {
+	public boolean initialize(String dataFile) {
 		BufferedReader stockBuffer = null;
 
 		try {
-			String stockEntry;
-			InputStream inputStream = ItemSales.class.getResourceAsStream(stockFile);
+			String dataEntry;
+			InputStream inputStream = ItemSales.class.getResourceAsStream(dataFile);
 
 			stockBuffer = new BufferedReader(new InputStreamReader(inputStream));
 
-			while ((stockEntry = stockBuffer.readLine()) != null) {
-				boolean productAdded = salesOperation.addProduct(parseStockEntry(stockEntry));
+			while ((dataEntry = stockBuffer.readLine()) != null) {
+				Product p=parseStockEntry(dataEntry);
+				salesOperation.addProduct(p);
 
-				if (!productAdded) {
-					System.out.println(" productAdded failed");
-				}
+				
 			}
 		} catch (IOException exception) {
 			exception.printStackTrace();
@@ -69,17 +67,10 @@ public class ItemSales {
 
 		String[] productData = stockEntry.split("\\s*,\\s*");
 
-		if (productData.length != 4) {
-			System.out.println("Too much or too less product data. Please check stock data.");
-			return null;
-		}
-
 		Product product = null;
 
 		try {
-			product = new Product(productData[0], // product type, string value
-					Long.valueOf(productData[2]), // sold out units, long value
-					Double.valueOf(productData[3])); // unit price, double value
+			product = new Product(productData[0]); // product
 		} catch (NumberFormatException exception) {
 			System.out.println(" Please check data.");
 		}
@@ -87,12 +78,12 @@ public class ItemSales {
 		return product;
 	}
 
-	public List<Message> parse(String notificationsFile) {
+	public List<Message> parse(String testSalesdata) {
 		List<Message> messages = null;
 		ObjectMapper mapper = new ObjectMapper();
 
 		try {
-			messages = mapper.readValue(new File(ItemSales.class.getResource(notificationsFile).getFile()),
+			messages = mapper.readValue(new File(ItemSales.class.getResource(testSalesdata).getFile()),
 					new TypeReference<List<Message>>() {
 					});
 		} catch (IOException e) {
@@ -102,37 +93,39 @@ public class ItemSales {
 		return messages;
 	}
 
-	public boolean process(List<Message> messages) {
-		int processedMessages = 0;
-		StringBuilder adjustmentsLog = new StringBuilder();
+	public boolean finalLogic(List<Message> messages) {
+		
+		StringBuilder aLog = new StringBuilder();
+		int proMsg = 0;
 		for (Message message : messages) {
 			boolean recordsUpdated = salesOperation.updateRecords(message);
 			if (!recordsUpdated) {
 				return false;
 			}
 
-			processedMessages++;
+			proMsg++;
 
 			if (message instanceof AdjustmentMessage) {
-				adjustmentsLog.append("Product (");
-				adjustmentsLog.append(message.getType());
-				adjustmentsLog.append(") was adjusted (operation: ");
-				adjustmentsLog.append(((AdjustmentMessage) message).getOperationType());
-				adjustmentsLog.append(") by a value of ");
-				adjustmentsLog.append(message.getSellingPrice());
-				adjustmentsLog.append(" at approximately ");
-				adjustmentsLog.append(new Date());
-				adjustmentsLog.append(".\n");
+				aLog.append("Product (");
+				aLog.append(message.getType());
+				aLog.append(") was adjusted (operation: ");
+				aLog.append(((AdjustmentMessage) message).getOperationType());
+				aLog.append(") by a value of ");
+				aLog.append(message.getSellingPrice());
+				aLog.append(" at approximately ");
+				aLog.append(new Date());
+				aLog.append(".\n");
 			}
 
-			if (processedMessages % 10 == 0) {
-				System.out.println(
-						"\n========================Sales Record ====================================================");
+			if (proMsg % 10 == 0) {
+				//After every 10th message received your application should log a report detailing the number of sales of each product and their total value.
+				System.out.println("\n========================Sales Record ====================================================");
+				
 				salesOperation.printSalesReport();
 			}
 
-			if (processedMessages == TOTAL_MESSAGE_PASS) {
-				System.out.println("\n Max total of " + TOTAL_MESSAGE_PASS + " messages can not be Processed.");
+			if (proMsg == MAX_MESSAGE_ALLOW) {
+				System.out.println("\n Max total of " + MAX_MESSAGE_ALLOW + " messages can not be Processed.");
 				break;
 			}
 		}
@@ -145,9 +138,9 @@ public class ItemSales {
 		System.out.println("\n=========================Final Sales Record ==========================================");
 		salesOperation.printSalesReport();
 
-		if (adjustmentsLog.length() != 0) {
+		if (aLog.length() != 0) {
 			System.out.println("\n________________Message Type 3 :- Adjustment Msg Log _________________________");
-			System.out.println(adjustmentsLog.toString());
+			System.out.println(aLog.toString());
 		}
 
 		return true;

@@ -25,7 +25,7 @@ public class SalesOperation {
 	}
 
 	public boolean addProduct(Product product) {
-		if (product == null || records.containsKey(product)) {
+		if (product == null) {
 			return false;
 		}
 

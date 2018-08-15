@@ -10,14 +10,14 @@ public class Main {
 
 	
 		String dataFile = "/testItemdata.csv";
-		String notificationsFile = "/testSalesdata.json";
+		String testSalesdata = "/testSalesdata.json";
 
 		ItemSales itemSales = ItemSales.getItemSales();
 
 		itemSales.initialize(dataFile);
-		List<Message> messages = itemSales.parse(notificationsFile);
+		List<Message> messages = itemSales.parse(testSalesdata);
 
-		itemSales.process(messages);
+		itemSales.finalLogic(messages);
 
 	}
 
