@@ -52,7 +52,7 @@ public class SalesOperation {
 		} else if (message instanceof DetailedMessage) {
 			transactions = addNewSalesVOs(transactions, message);
 		} else {
-			examineNotification(message);
+			
 			transactions.add(new SalesVO(message.getSellingPrice()));
 		}
 
@@ -109,9 +109,9 @@ public class SalesOperation {
 
 	private List<SalesVO> addNewSalesVOs(List<SalesVO> transactions, Message message) {
 		double price = message.getSellingPrice();
-		long transactionsCount = ((DetailedMessage) message).getInstanceCount();
+		long transactionsCount = ((DetailedMessage) message).getOccurCount();
 
-		examineNotification(message);
+		
 
 		if (transactionsCount <= 0) {
 			return transactions;
@@ -124,13 +124,7 @@ public class SalesOperation {
 		return transactions;
 	}
 
-	private void examineNotification(Message message) {
-		if (message.getSellingPrice() <= 0) {
-			System.out.println(
-					"\nLogging item type:= " + message.getType() + ",price: " + message.getSellingPrice() + ".");
-		}
-	}
-
+	
 	public void printSalesReport() {
 		for (Map.Entry<Product, List<SalesVO>> record : records.entrySet()) {
 			System.out.println("item type: " + record.getKey().getType() + ", Total item sold out: "

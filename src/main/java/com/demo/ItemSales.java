@@ -104,7 +104,7 @@ public class ItemSales {
 			}
 
 			proMsg++;
-
+           
 			if (message instanceof AdjustmentMessage) {
 				aLog.append("Product (");
 				aLog.append(message.getType());
@@ -119,13 +119,13 @@ public class ItemSales {
 
 			if (proMsg % 10 == 0) {
 				//After every 10th message received your application should log a report detailing the number of sales of each product and their total value.
-				System.out.println("\n========================Sales Record ====================================================");
+				System.out.println("\n Message:"+(proMsg-10)+" to "+proMsg+" Comments:- After every 10th message received your application should log a report detailing the number of sales of each product and their total value.");
 				
 				salesOperation.printSalesReport();
 			}
 
 			if (proMsg == MAX_MESSAGE_ALLOW) {
-				System.out.println("\n Max total of " + MAX_MESSAGE_ALLOW + " messages can not be Processed.");
+				System.out.println("\n  50 messages DONE. After 50 messages your application should log that it is pausing, stop accepting new messagesd.");
 				break;
 			}
 		}

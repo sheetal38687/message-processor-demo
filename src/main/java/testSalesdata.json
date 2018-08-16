@@ -4,134 +4,29 @@
     "type":"apple",
     "sellingPrice":"10"
   },
-  {
-    "class":"DetailedMessage",
-    "type":"orange",
-    "sellingPrice":"10",
-    "instanceCount":"9"
-  },
-  {
-    "class":"DetailedMessage",
-    "type":"banana",
-    "sellingPrice":"7",
-    "instanceCount":"4"
-  },
-  {
-    "class":"DetailedMessage",
-    "type":"apple",
-    "sellingPrice":"-12",
-    "instanceCount":"3"
-  },
-  {
-    "class":"Message",
-    "type":"banana",
-    "sellingPrice":"-7"
-  },
-  {
-    "class":"Message",
-    "type":"apple",
-    "sellingPrice":"10"
-  },
-  {
-    "class":"DetailedMessage",
-    "type":"orange",
-    "sellingPrice":"7",
-    "instanceCount":"24"
-  },
-  {
-    "class":"DetailedMessage",
-    "type":"orange",
-    "sellingPrice":"10",
-    "instanceCount":"9"
-  },
-  {
-    "class":"DetailedMessage",
-    "type":"banana",
-    "sellingPrice":"7",
-    "instanceCount":"4"
-  },
-  {
-    "class":"DetailedMessage",
-    "type":"apple",
-    "sellingPrice":"-12",
-    "instanceCount":"3"
-  },
-  {
-    "class":"Message",
-    "type":"apple",
-    "sellingPrice":"10"
-  },
-  {
-    "class":"Message",
-    "type":"orange",
-    "sellingPrice":"7"
-  },
-  {
-    "class":"Message",
-    "type":"orange",
-    "sellingPrice":"10"
-  },
-  {
-    "class":"Message",
-    "type":"banana",
-    "sellingPrice":"7"
-  },
-  {
-    "class":"Message",
-    "type":"banana",
-    "sellingPrice":"7"
-  },
-  {
-    "class":"Message",
-    "type":"apple",
-    "sellingPrice":"12"
-  },
-  {
-    "class":"AdjustmentMessage",
-    "type":"apple",
-    "sellingPrice":"10",
-    "operationType":"ADD"
-  },
-  {
-    "class":"AdjustmentMessage",
-    "type":"banana",
-    "sellingPrice":"7",
-    "operationType":"MULTIPLY"
-  },
-  {
-    "class":"AdjustmentMessage",
-    "type":"apple",
-    "sellingPrice":"10",
-    "operationType":"MULTIPLY"
-  },
-  {
+   {
     "class":"AdjustmentMessage",
     "type":"apple",
     "sellingPrice":"10",
     "operationType":"SUBTRACT"
   },
-  {
-    "class":"Message",
-    "type":"apple",
-    "sellingPrice":"10"
-  },
-  {
+   {
     "class":"DetailedMessage",
     "type":"orange",
     "sellingPrice":"10",
-    "instanceCount":"9"
+    "occurCount":"9"
   },
   {
     "class":"DetailedMessage",
     "type":"banana",
     "sellingPrice":"7",
-    "instanceCount":"4"
+    "occurCount":"4"
   },
   {
     "class":"DetailedMessage",
     "type":"apple",
     "sellingPrice":"-12",
-    "instanceCount":"3"
+    "occurCount":"3"
   },
   {
     "class":"Message",
@@ -147,25 +42,131 @@
     "class":"DetailedMessage",
     "type":"orange",
     "sellingPrice":"7",
-    "instanceCount":"24"
+    "occurCount":"24"
   },
   {
     "class":"DetailedMessage",
     "type":"orange",
     "sellingPrice":"10",
-    "instanceCount":"9"
+    "occurCount":"9"
   },
   {
     "class":"DetailedMessage",
     "type":"banana",
     "sellingPrice":"7",
-    "instanceCount":"4"
+    "occurCount":"4"
   },
   {
     "class":"DetailedMessage",
     "type":"apple",
     "sellingPrice":"-12",
-    "instanceCount":"3"
+    "occurCount":"3"
+  },
+  {
+    "class":"Message",
+    "type":"apple",
+    "sellingPrice":"10"
+  },
+  {
+    "class":"Message",
+    "type":"orange",
+    "sellingPrice":"7"
+  },
+  {
+    "class":"Message",
+    "type":"orange",
+    "sellingPrice":"10"
+  },
+  {
+    "class":"Message",
+    "type":"banana",
+    "sellingPrice":"7"
+  },
+  {
+    "class":"Message",
+    "type":"banana",
+    "sellingPrice":"7"
+  },
+  {
+    "class":"Message",
+    "type":"apple",
+    "sellingPrice":"12"
+  },
+  {
+    "class":"AdjustmentMessage",
+    "type":"banana",
+    "sellingPrice":"7",
+    "operationType":"MULTIPLY"
+  },
+  {
+    "class":"AdjustmentMessage",
+    "type":"apple",
+    "sellingPrice":"10",
+    "operationType":"MULTIPLY"
+  },
+  
+  {
+    "class":"Message",
+    "type":"apple",
+    "sellingPrice":"10"
+  },
+  {
+    "class":"AdjustmentMessage",
+    "type":"apple",
+    "sellingPrice":"10",
+    "operationType":"ADD"
+  },
+  {
+    "class":"DetailedMessage",
+    "type":"orange",
+    "sellingPrice":"10",
+    "occurCount":"9"
+  },
+  {
+    "class":"DetailedMessage",
+    "type":"banana",
+    "sellingPrice":"7",
+    "occurCount":"4"
+  },
+  {
+    "class":"DetailedMessage",
+    "type":"apple",
+    "sellingPrice":"-12",
+    "occurCount":"3"
+  },
+  {
+    "class":"Message",
+    "type":"banana",
+    "sellingPrice":"-7"
+  },
+  {
+    "class":"Message",
+    "type":"apple",
+    "sellingPrice":"10"
+  },
+  {
+    "class":"DetailedMessage",
+    "type":"orange",
+    "sellingPrice":"7",
+    "occurCount":"24"
+  },
+  {
+    "class":"DetailedMessage",
+    "type":"orange",
+    "sellingPrice":"10",
+    "occurCount":"9"
+  },
+  {
+    "class":"DetailedMessage",
+    "type":"banana",
+    "sellingPrice":"7",
+    "occurCount":"4"
+  },
+  {
+    "class":"DetailedMessage",
+    "type":"apple",
+    "sellingPrice":"-12",
+    "occurCount":"3"
   },
   {
     "class":"Message",
@@ -229,31 +230,31 @@
     "class":"DetailedMessage",
     "type":"orange",
     "sellingPrice":"7",
-    "instanceCount":"24"
+    "occurCount":"24"
   },
   {
     "class":"AdjustmentMessage",
     "type":"apple",
     "sellingPrice":"12",
-    "operationType":"SUBTRACT"
+    "operationType":"ADD"
   },
   {
     "class":"DetailedMessage",
     "type":"apple",
     "sellingPrice":"10",
-    "instanceCount":"4"
+    "occurCount":"4"
   },
   {
     "class":"DetailedMessage",
     "type":"banana",
     "sellingPrice":"7",
-    "instanceCount":"7"
+    "occurCount":"7"
   },
   {
     "class":"DetailedMessage",
     "type":"apple",
     "sellingPrice":"10",
-    "instanceCount":"5"
+    "occurCount":"5"
   },
   {
     "class":"Message",
@@ -269,31 +270,31 @@
     "class":"DetailedMessage",
     "type":"apple",
     "sellingPrice":"10",
-    "instanceCount":"11"
+    "occurCount":"11"
   },
   {
     "class":"DetailedMessage",
     "type":"orange",
     "sellingPrice":"7",
-    "instanceCount":"24"
+    "occurCount":"24"
   },
   {
     "class":"DetailedMessage",
     "type":"orange",
     "sellingPrice":"10",
-    "instanceCount":"9"
+    "occurCount":"9"
   },
   {
     "class":"DetailedMessage",
     "type":"banana",
     "sellingPrice":"7",
-    "instanceCount":"4"
+    "occurCount":"4"
   },
   {
     "class":"DetailedMessage",
     "type":"apple",
     "sellingPrice":"-12",
-    "instanceCount":"4"
+    "occurCount":"3"
   }
   
 ]
